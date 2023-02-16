@@ -21,13 +21,13 @@ exports.login = async (req, res) => {
                     return res.status(401).render('services');
                 }
                 else if(result.length<=0){
-                    return res.status(401).render('login',{
+                    return res.status(401).render('index',{
                         msg:' phone and password incorrect',
                         msg_type:"error",
                     });
                 }
                 else if(!(await bcrypt.compare( password,result[0].PASS))){
-                        return res.status(401).render('login',{
+                        return res.status(401).render('index',{
                             msg:' phone and password incorrect',
                             msg_type:"error",
                         });
@@ -73,7 +73,7 @@ db.query('insert into users set ?',{name:name,phone:phone,pass:hashedPassword},
         console.log(error);  
     }else{
         console.log(result);
-        return res.status(402).render("login");
+        return res.status(402).render("index");
     }
 });
 

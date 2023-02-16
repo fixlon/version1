@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>FIXLON</title>
+</head>
+
+<style>
+    body{
+        background-color: #dfd6a7;
+        
+    }
+</style>
+
+<body>
+
+<header class="l-header" id="header">
+
+        <div class="navbar">
+
+            <div class="brand">
+                <a href="/profile" style="color:#6F4E37;"><h1>FIXLON</h1></a>
+            </div>
+
+            <div class="nav" id="nav">
+                <ul class="nav__menu">
+                    <a href="/"><button class="logout">Logout</button></a>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+        </div>
+
+</header>
+
+
+<section >
+
+<div class="video">
+        <div class="section__title">
+            <h1>OUR WORKS</h1>
+        </div>
+    <div class="vservice">
+
+        <div class="vs">
+            <video src="/assests/services/v1.mp4" 
+            type="video/mp4"  muted  loop class="clip" >
+            </video>
+        </div>
+
+        <div class="vs">
+            <video src="/assests/services/v3.mp4" 
+            type="video/mp4"  muted  loop  class="clip">
+            </video>
+        </div>
+
+        <div class="vs">
+            <video src="/assests/services/v2.mp4"
+            type="video/mp4"  muted  loop class="clip" >
+            </video>
+        </div>
+
+        <div class="vs">
+            <video src="/assests/services/v4.mp4"
+            type="video/mp4"  muted  loop  class="clip">
+            </video>
+        </div>
+            
+        </div>
+</div>
+
+</section>
+
+</body>
+
+
+<script>
+    
+
+    // Listening to the video element
+    const clip = document.querySelectorAll(".clip")
+    for(let i=0;i<clip.length;i++){
+    /* Adding the event listeners on the video to play/pause the video. */
+    clip[i].addEventListener("mouseenter", ()=> {
+      clip[i].play();
+    })
+
+    /* Applying the mouse out event to pause the video */
+    clip[i].addEventListener("mouseout", ()=> {
+     clip[i].pause();
+    })
+    }
+
+</script>
+
+</html>

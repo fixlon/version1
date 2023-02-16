@@ -1,0 +1,133 @@
+<form action="">
+<button class="button open-button">open modal</button>
+</form>
+<dialog class="modal" id="modal">
+ <h1>Thanks for Confirm Your Booking</h1>
+    
+  <button class="button close-button">close modal</button>
+ 
+
+</dialog>
+
+<!--   
+  <form class="form" method="dialog">
+    <label>Your name <input type="text"></label>
+    <label>Your email <input type="email"></label>
+    <button class="button" type="submit">submit form</button>
+  </form>-->
+  <style>
+    .modal {
+  padding: 1em;
+  max-width: 50ch;
+   border: 0;
+   box-shadow: 0 0 1em rgb(0 0 0 / .3);
+
+  & > * {
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+/* extra styling */
+
+body {
+  min-height: 100vh;
+  margin: 2rem;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--gray-8);
+  // background-image: url('https://images.unsplash.com/photo-1644242629712-943ae5c8c4f3?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0Njc1MjQxNA&ixlib=rb-1.2.1&q=85');
+  // background-size: cover;
+}
+
+h1 em {
+  color: var(--cyan-9);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.button {
+  border: 0;
+  cursor: pointer;
+  background: var(--gray-8);
+  color: var(--gray-2);
+  font-weight: 700;
+  padding: var(--size-2) var(--size-4);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--cyan-9);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+
+  </style>
+
+  <script>
+    const modal = document.querySelector("#modal");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+
+openModal.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
+
+  </script>
+
+  {{!-- <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+      <form id="form">
+  <!-- Your form elements go here -->
+    <button >submit</button>
+</form>
+  </body>
+
+
+<script>
+
+  // Get the form element
+  var form = document.getElementById("form");
+
+  // Add a submit event listener to the form
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Show the SweetAlert message
+    Swal.fire({
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: true,
+})
+.then((result) => {
+      if (result.value) {
+        // Submit the form if the user confirms
+        form.submit();
+      } else {
+        // Do nothing if the user cancels
+      }
+    });
+  });
+</script>
+
+  </html> --}}

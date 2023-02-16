@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" href="./icon.png">
+    <link rel="shortcut icon" href="assests/img/favicon.png" type="image/show-icon">
+    <link rel="stylesheet" href="/css/login.css">
+  </head>
+  
+  <body>
+
+    <div class="container">
+        <h1>GET IN TOUCH</h1>
+         {{#if msg}}
+        <p class="{{msg_type}}">{{msg}}</p>
+        {{/if}}
+        
+        <form action="/auth/login" method="post"onsubmit="return validateuser()">
+            <div class="row">
+               <div class="column">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="your phone here" oninvalid="this.setCustomValidity('Phone Number is reqired')" oninput="this.setCustomValidity('')" required>
+                </div>
+                <div class="column">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" name="password" oninvalid="this.setCustomValidity('Password  is reqired')" oninput="this.setCustomValidity('')"required>
+                </div>
+            </div>
+            <div class="column">
+                <input type="checkbox" id="show" onclick="myFunction()"> Show Password</div>
+            <div class="button">
+                <button>Submit</button>
+            </div><br>
+            <a href="#">Forgot Password?</a>
+            <br><br>
+            <hr><br>
+            <a href="/register" >Create account</a>
+        </form>
+    </div>
+
+  </body>
+
+
+<script>
+     function myFunction() {
+  var show = document.getElementById("password");
+  if (show.type === "password") {
+    show.type = "text";
+  } else {
+    show.type = "password";
+  }
+}
+  </script>
+  
+  </html>
